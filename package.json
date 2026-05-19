@@ -1,16 +1,22 @@
 {
   "name": "planeta-qa-e2e",
   "version": "1.0.0",
-  "description": "",
+  "description": "E2E tests for Planeta QA API using Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "open": "cypress open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
     "cypress": "^15.15.0"
-  }
+  },
+  "keywords": [
+    "cypress",
+    "e2e",
+    "qa",
+    "testing",
+    "api-tests"
+  ],
+  "author": "robertocyanes",
+  "license": "MIT"
 }
