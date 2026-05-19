@@ -17,14 +17,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: Go to Cypress project
-        run: cd planeta-qa-e2e
-
       - name: Install dependencies
         working-directory: planeta-qa-e2e
-        run: npm ci || npm install
+        run: npm install
 
-      - name: Verify Cypress install
+      - name: Verify Cypress
         working-directory: planeta-qa-e2e
         run: npx cypress verify
 
