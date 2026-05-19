@@ -8,10 +8,6 @@ jobs:
   cypress-tests:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: planeta-qa-e2e
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,10 +18,13 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
+        working-directory: planeta-qa-e2e
         run: npm install
 
       - name: Verify Cypress
+        working-directory: planeta-qa-e2e
         run: npx cypress verify
 
       - name: Run Cypress tests
+        working-directory: planeta-qa-e2e
         run: npx cypress run
