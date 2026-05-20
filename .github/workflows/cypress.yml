@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+
   pull_request:
     branches:
       - main
@@ -19,13 +20,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Java 21
+      - name: Setup Java 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 21
 
-      - name: Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -39,12 +40,13 @@ jobs:
         run: |
           cd planeta-qa
           nohup mvn spring-boot:run > app.log 2>&1 &
-          sleep 35
+          sleep 40
 
-      - name: Check API
-        run: curl http://localhost:8081/products
+      - name: Verify API
+        run: |
+          curl http://localhost:8081/products
 
-      - name: Install Cypress
+      - name: Install Cypress Dependencies
         run: |
           cd planeta-qa-e2e
           npm install
