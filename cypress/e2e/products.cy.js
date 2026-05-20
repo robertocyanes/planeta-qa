@@ -1,37 +1,77 @@
-describe('Planeta QA - API Tests', () => {
+describe("Planeta QA - API Tests", () => {
 
-  it('cria e valida produto', () => {
+  it("cria e valida produto", () => {
 
-    cy.request('POST', '/products', {
-      name: 'Chair Cypress',
-      category: 'Furniture',
-      price: 150,
-      stock: 5
-    }).then((postRes) => {
+    cy.request({
+      method: "POST",
+      url: "/products",
+      body: {
+        name: "Notebook Gamer",
+        category: "Eletronicos",
+        price: 4500.00,
+        stock: 15
+      }
 
-      expect(postRes.status).to.eq(200);
-      expect(postRes.body).to.have.property('id');
+    }).then((response) => {
 
-      const id = postRes.body.id;
+      expect(response.status).to.eq(201)
+      expect(response.body.name).to.eq("Notebook Gamer")
+      expect(response.body.category).to.eq("Eletronicos")
+      expect(response.body.price).to.eq(4500)
+      expect(response.body.stock).to.eq(15)
+      expect(response.body.id).to.exist
 
-      cy.request('/products').then((getRes) => {
+    })
 
-        expect(getRes.status).to.eq(200);
-        expect(getRes.body).to.be.an('array');
+  })
 
-        const found = getRes.body.find(p => p.id === id);
-        expect(found).to.not.be.undefined;
-      });
-    });
-  });
+  it("lista produtos", () => {
 
-  it('lista produtos sem quebrar mesmo vazio', () => {
+    cy.request({
+      method: "GET",
+      url: "/products"
 
-    cy.request('/products').then((res) => {
-      expect(res.status).to.eq(200);
-      expect(res.body).to.be.an('array');
-    });
+    }).then((response) => {
 
-  });
+      expect(response.status).to.eq(200)
+      expect(response.body).to.be.an("array")
 
-});
+    })
+
+  })
+
+  it("busca produto por id", () => {
+
+    cy.request({
+      method: "POST",
+      url: "/products",
+      body: {
+
+        name: "Mouse",
+        category: "Perifericos",
+        price: 120,
+        stock: 8
+
+      }
+
+    }).then((createResponse) => {
+
+      const id = createResponse.body.id
+
+      cy.request({
+        method: "GET",
+        url: `/products/${id}`
+
+      }).then((response) => {
+
+        expect(response.status).to.eq(200)
+        expect(response.body.id).to.eq(id)
+        expect(response.body.name).to.eq("Mouse")
+
+      })
+
+    })
+
+  })
+
+})
