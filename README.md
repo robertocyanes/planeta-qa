@@ -1,4 +1,4 @@
-# 🚀 Planeta QA - API Testing Project
+# 🟡 Planeta QA - API Testing Project
 
 Projeto de automação de testes para API REST utilizando Spring Boot e Cypress, com integração contínua via GitHub Actions.
 
