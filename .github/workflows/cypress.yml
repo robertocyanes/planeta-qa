@@ -49,4 +49,5 @@ jobs:
 
       - name: Run Cypress
         working-directory: ./planeta-qa-e2e
+        run: npx cypress runaneta-qa-e2e
         run: npx cypress run
