@@ -16,7 +16,7 @@ Este projeto tem como objetivo demonstrar uma arquitetura de testes automatizado
 
 ---
 
-# 🧰 Stack utilizada
+# 🟡 Stack utilizada
 
 ## Backend
 - Java 21
