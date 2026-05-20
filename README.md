@@ -1,4 +1,4 @@
-# 🟡 Planeta QA - API Testing Project
+# 🚀 Planeta QA - API Testing Project
 
 Projeto de automação de testes para API REST utilizando Spring Boot e Cypress, com integração contínua via GitHub Actions.
 
@@ -16,7 +16,7 @@ Este projeto tem como objetivo demonstrar uma arquitetura de testes automatizado
 
 ---
 
-# 🟡 Stack utilizada
+# 🧰 Stack utilizada
 
 ## Backend
 - Java 21
@@ -34,7 +34,7 @@ Este projeto tem como objetivo demonstrar uma arquitetura de testes automatizado
 
 ---
 
-# 🟡 Arquitetura
+# 🏗️ Arquitetura
 
 O projeto segue uma arquitetura simples e escalável:
 
@@ -46,7 +46,7 @@ Cypress (testes externos)
 
 ---
 
-# 🟡 Tipos de testes implementados
+# 🧪 Tipos de testes implementados
 
 ## ✔ Testes unitários (backend)
 
@@ -60,7 +60,7 @@ Exemplo:
 
 ---
 
-## 🟡 Testes de integração (API)
+## ✔ Testes de integração (API)
 
 Testam a integração completa do sistema:
 
@@ -75,7 +75,7 @@ Validam:
 
 ---
 
-## 🟡 Testes automatizados (Cypress)
+## ✔ Testes automatizados (Cypress)
 
 Cobrem o fluxo completo da API como cliente externo:
 
@@ -86,7 +86,7 @@ Cobrem o fluxo completo da API como cliente externo:
 
 ---
 
-## 🟡 Testes end-to-end (conceito aplicado)
+## ✔ Testes end-to-end (conceito aplicado)
 
 Simulação do comportamento real do consumidor da API:
 
@@ -133,14 +133,5 @@ Testes Cypress
 cd planeta-qa-e2e
 npm install
 npx cypress run
-
-🟡 Qualidade de software aplicada
-Este projeto aplica boas práticas de QA:
-
-- Automação de testes repetíveis
-- Separação entre backend e testes
-- Validação de contratos da API
-- Cobertura de cenários positivos
-- Estrutura preparada para testes negativos (expansão futura)
 
 Github: robertocyanes
